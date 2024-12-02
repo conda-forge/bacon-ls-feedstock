@@ -1,0 +1,47 @@
+context:
+  version: 0.3.1
+
+package:
+  name: bacon-ls
+  version: ${{ version }}
+
+source:
+  url: https://github.com/crisidev/bacon-ls/archive/v${{ version }}.tar.gz
+  sha256: 592ea5b794838f50cb15983dadd2a10960e7bbceab8eed279cf0f7f472432d54
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - cargo-bundle-licenses
+
+tests:
+  - script:
+      - if: not win
+        then: |
+          bacon-ls &
+          exe_pid=$!
+          trap "kill -SIGTERM ${exe_pid}" SIGTERM
+      - if: win
+        then: |
+          start /b bacon-ls
+          if %errorlevel% neq 0 exit %errorlevel%
+          taskkill /F /im bacon-ls.exe
+          if %errorlevel% neq 0 exit %errorlevel%
+
+about:
+  license: MIT
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
+  summary: A Language Server for Rust using Bacon diagnostics
+  homepage: https://github.com/crisidev/bacon-ls
+  repository: https://github.com/crisidev/bacon-ls
+
+extra:
+  recipe-maintainers:
+    - danielnachun
