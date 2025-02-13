@@ -1,5 +1,5 @@
 {% set name = "bacon-ls" %}
-{% set version = "0.15.0" %}
+{% set version = "0.16.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/crisidev/bacon-ls/archive/{{ version }}.tar.gz
-  sha256: 1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593
+  sha256: db782e4c79f8aeeec9370bd10a986a991e0929055ce92baa0dd9a4847c171590
 
 build:
   number: 0
