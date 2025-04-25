@@ -19,6 +19,8 @@ requirements:
     - {{ stdlib('c') }}
     - cargo-bundle-licenses
     - pkg-config
+  host:
+    - openssl
 
 test:
   commands:
