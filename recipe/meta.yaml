@@ -1,8 +1,7 @@
-{% set name = "bacon-ls" %}
 {% set version = "0.24.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: bacon-ls
   version: {{ version }}
 
 source:
@@ -10,7 +9,7 @@ source:
   sha256: 916c7662cf8bf17eb4fbecdaa9c1c90278f617c9ecae3d7c8ca708c6b23a3006
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
