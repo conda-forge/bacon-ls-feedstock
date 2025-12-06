@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/crisidev/bacon-ls/archive/{{ version }}.tar.gz
-  sha256: 916c7662cf8bf17eb4fbecdaa9c1c90278f617c9ecae3d7c8ca708c6b23a3006
+  sha256: 479b0addff30f13fec072afad1f37f54fb670b5fd2833287cb03cbb8827d9ab5
 
 build:
   number: 1
